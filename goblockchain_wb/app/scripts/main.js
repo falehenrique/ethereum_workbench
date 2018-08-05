@@ -2,8 +2,11 @@
 
 //load
  window.addEventListener('load', function() {
-    var urlNode = 'http://localhost:7545';
-    window.web3 = new Web3(new Web3.providers.HttpProvider(urlNode));
+    //var urlNode = 'http://localhost:8545';
+    //window.web3 = new Web3(new Web3.providers.HttpProvider(urlNode));
+    //conect with metamask
+    window.web3 = new Web3(web3.currentProvider)
+
     checkWeb3()
     
 });
@@ -13,11 +16,13 @@ function checkWeb3(){
     // Set the connect status on the app
     if (web3 && web3.isConnected()) {
         console.info('Connected');
+        $('#no_status').text("Conectado");
         // Set version
         setWeb3Version();
         checkNodeStatus();
     } else {
         console.info('Not Connected');
+        $('#no_status').text("Desconectado");
     }
 }
 
