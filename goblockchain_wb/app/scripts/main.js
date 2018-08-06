@@ -308,8 +308,11 @@ $( "#btnSendValidation" ).click(function() {
     }
 
     personInstance.sendValidationIdentity.sendTransaction(_addressPerson, _valid, txn,function(error, result)  {
-        console.info(result);
-        console.info(error);
+        if(result) {
+            console.info(result);
+        } else {
+            console.info(error);
+        }
     });  
 
 });
