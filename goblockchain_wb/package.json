@@ -44,7 +44,6 @@
     }
   },
   "dependencies": {
-    "fs": "0.0.1-security",
-    "solc": "^0.4.19"
+    "fs": "0.0.1-security"
   }
 }

@@ -36,21 +36,15 @@
             <span class="caret"></span></a>
             <ul class="dropdown-menu">
               <li><a href="pessoa.html">Pessoa</a></li>
-              <li><a href="pessoa.html">Armazenar documento</a></li>
-              <li><a href="pessoa.html">Comprar Tokens</a></li>                            
-              <li><a href="pessoa.html">Transferir Tokens</a></li>                                          
+              <li><a href="documento.html">Criar documento</a></li>
+              <li><a href="comprarTokens.html">Comprar Tokens</a></li>                            
+              <li><a href="meusTokens.html">Transferir Tokens</a></li>                                          
             </ul>
           </li>
         </ul>
       </div>
-
-      <div class="jumbotron">
-        <h1>'Workbench' - GoBochain!</h1>
-        <p class="lead">Basic commands to interact with ethereum node.</p>
-        <p><a class="btn btn-lg btn-success" href="http://goblockchain.io" target="_blank">Go!</a></p>
-      </div>
-
-            
+      <h1>'Workbench' - GoBockchain</h1>
+      <br>
       <div class="row">
         <div class="col-lg-12">
           <h4>Estado do aplicação</h4>
@@ -60,17 +54,20 @@
 
       <div class="row">
         <div class="col-lg-12">
-          <h4>Version Geth</h4>
+          <h4>Versão Geth</h4>
           <label id="versionGeth"></label>
 
-          <h4>Accounts <label id="sizeAccounts"></label></h4>
+          <h4>Nós conectados</h4>
+          <label id="nodes"></label>          
+        
+          <h4>Contas <label id="sizeAccounts"></label></h4>
           <ul id="accounts_ul">
           </ul>      
         </div>
       </div>
 
       <div class="form-inline">
-        <h4>Get Balance Account</h4>
+        <h4>Consultar Saldo Conta</h4>
         <div class="form-group mx-sm-3">
           <input type="text" class="form-control" id="account" placeholder="Account">
         </div>
@@ -81,7 +78,7 @@
       </div>
 
       <div class="form-inline">
-          <h4>Unlock the account</h4>
+          <h4>Desbloquear conta</h4>
           <div class="form-group mx-sm-3">
               <input type="text" class="form-control" id="accountUnlock" placeholder="Account">
           </div>            
@@ -92,7 +89,7 @@
       </div>      
 
       <div class="form-inline">
-          <h4>Send ether to</h4>        
+          <h4>Enviar ether</h4>        
           <div class="form-group mx-sm-3">
               <input type="text" class="form-control" id="from" placeholder="From">
           </div>          
@@ -109,7 +106,7 @@
         </div>      
 
         <div class="form-inline">
-            <h4>View transaction</h4>
+            <h4>Visualizar transação</h4>
             <div class="form-group mx-sm-3">
                 <input type="text" class="form-control" id="transaction" placeholder="Transaction">
             </div>            
@@ -122,20 +119,10 @@
       <br>
 
       <div class="footer">
-        <p>♥ from the Yeoman team</p>
+        <p>♥ GoBlockchain</p>
       </div>
     </div>
     
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>

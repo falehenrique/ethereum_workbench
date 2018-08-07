@@ -56,26 +56,49 @@
         </div>
 
         <div class="form-inline">
+            <h4>Criar registro</h4>
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="name" placeholder="name">
+            </div>
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="email" placeholder="email">
+            </div>
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="phone" placeholder="phone">
+            </div>
+            <button type="button" class="btn btn-primary" id="btnCreatePerson">Create</button>
+            <div class="alert alert-success" role="alert">
+                <label id="resultTransaction"></label>
+            </div>
+        </div>
+        <br>
+        <div class="form-inline">
             <h4>Consultar Pessoa</h4>
             <div class="form-group mx-sm-3">
                 <input type="text" class="form-control" id="addressContract" placeholder="Endereço Contrato">
             </div>
-            <button type="button" class="btn btn-primary" id="btnGetPerson">Consultar</button>            
+            <button type="button" class="btn btn-primary" id="btnGetPerson">Consultar</button>
+            <button type="button" class="btn btn-danger" id="btnEvents">Eventos</button>            
         </div>
-        <br>
-        <div class="row">
-            <div class="col-md-12">
-                <p>Dono do contrato:</p> <label id="lblOwner">-</label>
+        <div class="form-inline">
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="lblOwner" placeholder="Owner" readonly>
             </div>            
-            <div class="col-md-4">
-                <p>Identificação do contrato:</p> <label id="lblIdentificationPerson">-</label>
-            </div>       
-            <div class="col-md-4">
-                <p>Nome:</p> <label id="lblName">-</label>
-            </div>       
-            <div class="col-md-4">
-                <p>Email:</p> <label id="lblEmail">-</label>
-            </div>                                                       
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="lblName" placeholder="name" readonly>
+            </div>
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="lblEmail" placeholder="email" readonly>
+            </div>
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="lblPhone" placeholder="phone" readonly>
+            </div>
+            <div class="form-group mx-sm-1">
+                <input type="text" class="form-control" id="totalPersonValid" placeholder="Total de validações" readonly>
+            </div>            
+            <div class="alert alert-success" role="alert">
+                <label id="labelResultEvent"></label>
+            </div>
         </div>
         <br>
         <div class="form-inline">
@@ -85,12 +108,17 @@
             </div>
             <button type="button" class="btn btn-primary" id="btnUpdateEmail">Alterar</button>
         </div>
-        <br>
-        <p>Eventos:</p>
-        <div class="alert alert-success" role="alert">
-            <label id="labelResultEvent"></label>
-        </div>        
         <hr>
+        <div class="form-inline">
+            <h4>Validar pessoa</h4>
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="addressPerson" placeholder="Endereço da pessoa">
+            </div>
+            <div class="form-group mx-sm-3">
+                <input type="text" class="form-control" id="valid" placeholder="Válido?">
+            </div>            
+            <button type="button" class="btn btn-primary" id="btnSendValidation">Enviar</button>
+        </div>
 
         <div class="footer">
             <p>♥ GoBlockchain</p>
