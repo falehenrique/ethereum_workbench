@@ -5,7 +5,7 @@ import "./CrowndFund.sol";
 import "./TokenClass.sol";
 
 contract Person is TokenClass {
-    address public owner;
+    address owner;
 
     //date of create
     uint public dateCreate;
