@@ -1,156 +1,186 @@
 <!doctype html>
 <html class="no-js" lang="">
-  <head>
-    <meta charset="utf-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>goblockchain_wb</title>
 
-    <link rel="apple-touch-icon" href="apple-touch-icon.png">
-    <!-- Place favicon.ico in the root directory -->
+<head>
+  <meta charset="utf-8">
+  <meta name="description" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="shortcut icon" href="./img/favicon.ico" />
+  <title>goblockchain_wb</title>
 
-    <!-- build:css styles/vendor.css -->
-    <!-- bower:css -->
-    <!-- endbower -->
-    <!-- endbuild -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+    crossorigin="anonymous">
+</head>
 
-    <!-- build:css styles/main.css -->
-    <link rel="stylesheet" href="styles/main.css">
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/vendor/modernizr.js -->
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <!-- endbuild -->
-  </head>
-  <body>
-    <!--[if IE]>
-      <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-    <![endif]-->
-    
-    <div class="container">
-      <div class="header">
-        <ul class="nav nav-tabs">
-          <li class="active"><a href="#">Home</a></li>
-          <li class="dropdown">
-            <a class="dropdown-toggle" data-toggle="dropdown" href="#">Contratos
-            <span class="caret"></span></a>
-            <ul class="dropdown-menu">
-              <li><a href="pessoa.html">Pessoa</a></li>
-              <li><a href="documento.html">Criar documento</a></li>
-              <li><a href="comprarTokens.html">Comprar Tokens</a></li>                            
-              <li><a href="meusTokens.html">Transferir Tokens</a></li>                                          
-            </ul>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <ul class="nav">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Minha Carteira</a>
+        </li>
+        <li class="nav-item">
+          <li>
+            <a class="nav-link disabled" href="">Cadastro Pessoa</a>
           </li>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Tokens
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Comprar</a>
+            <a class="dropdown-item" href="#">Fundo do token</a>
+          </div>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+            aria-expanded="false">
+            Evento
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="#">Meu ticket</a>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <br>
+    <h3>
+      <p>'Workbench' - GoBockchain</p>
+    </h3>
+    <br>
+
+    <form>
+      <div class="form-group row">
+        <label for="no_status" class="col-sm-2 col-form-label">Estado do aplicação:</label>
+        <div class="col-sm-10">
+          <label class="form-control-plaintext" id="no_status"></label>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="versionGeth" class="col-sm-2 col-form-label">Versão Geth:</label>
+        <div class="col-sm-10">
+          <label class="form-control-plaintext" id="versionGeth"></label>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="nodes" class="col-sm-2 col-form-label">Nós conectados:</label>
+        <div class="col-sm-10">
+          <label class="form-control-plaintext" id="nodes"></label>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="nodes" class="col-sm-2 col-form-label">Quantidade Contas:</label>
+        <div class="col-sm-10">
+          <label class="form-control-plaintext" id="sizeAccounts"></label>
+        </div>
+      </div>
+      <div class="form-group">
+        <ul id="accounts_ul">
         </ul>
       </div>
-      <h1>'Workbench' - GoBockchain</h1>
-      <br>
-      <div class="row">
-        <div class="col-lg-12">
-          <h4>Estado do aplicação</h4>
-          <label id="no_status"></label>    
-        </div>
-      </div>
+    </form>
 
-      <div class="row">
-        <div class="col-lg-12">
-          <h4>Versão Geth</h4>
-          <label id="versionGeth"></label>
+    <div class="card">
+      <h5 class="card-header">Consultar Saldo Conta</h5>
 
-          <h4>Nós conectados</h4>
-          <label id="nodes"></label>          
-        
-          <h4>Contas <label id="sizeAccounts"></label></h4>
-          <ul id="accounts_ul">
-          </ul>      
-        </div>
-      </div>
-
-      <div class="form-inline">
-        <h4>Consultar Saldo Conta</h4>
-        <div class="form-group mx-sm-3">
-          <input type="text" class="form-control" id="account" placeholder="Account">
-        </div>
-        <button type="button" class="btn btn-primary" id="btnBalance">Get Balance</button>
-        <div class="form-group">
-          <input type="text" readonly class="form-control-plaintext" id="accountBalance" value="">
-        </div>
-      </div>
-
-      <div class="form-inline">
-          <h4>Desbloquear conta</h4>
-          <div class="form-group mx-sm-3">
-              <input type="text" class="form-control" id="accountUnlock" placeholder="Account">
-          </div>            
-          <div class="form-group mx-sm-3">
-            <input type="password" class="form-control" id="password" placeholder="Password">
+      <div class="card-body">
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" id="account" placeholder="Conta">
           </div>
-          <button type="button" class="btn btn-primary" id="btnUnlock">Unlock</button>
-      </div>      
-
-      <div class="form-inline">
-          <h4>Enviar ether</h4>        
-          <div class="form-group mx-sm-3">
-              <input type="text" class="form-control" id="from" placeholder="From">
-          </div>          
-          <div class="form-group mx-sm-3">
-            <input type="text" class="form-control" id="to" placeholder="To">
-          </div>     
-          <div class="form-group mx-sm-3">
-            <input type="text" class="form-control" id="valueToSend" placeholder="value">
-          </div>                
-          <button type="button" class="btn btn-primary" id="btnSendEther">Send</button>
-          <div class="alert alert-success" role="alert">
-              <label id="labelResultSendEther"></label>
-          </div>           
-        </div>      
-
-        <div class="form-inline">
-            <h4>Visualizar transação</h4>
-            <div class="form-group mx-sm-3">
-                <input type="text" class="form-control" id="transaction" placeholder="Transaction">
-            </div>            
-            <button type="button" class="btn btn-primary" id="btnTransaction">Search</button>
-            <div class="alert alert-warning" role="alert">
-                <textarea class="form-control" rows="20" cols="90"  id="resultTransaction"></textarea>
-            </div>               
-        </div>         
-
-      <br>
-
-      <div class="footer">
-        <p>♥ GoBlockchain</p>
+          <div class="col-3">
+            <input type="text" readonly class="form-control" id="accountBalance" value="-">
+          </div>
+          <button type="button" class="btn btn-primary" id="btnBalance">Consultar</button>
+        </div>
       </div>
     </div>
-    
-    <!-- build:js scripts/vendor.js -->
-    <!-- bower:js -->
-    <script src="/bower_components/jquery/dist/jquery.js"></script>
-    <script src="/bower_components/modernizr/modernizr.js"></script>
-    <script src="/bower_components/bignumber.js/bignumber.js"></script>
-    <script src="/bower_components/crypto-js/index.js"></script>
-    <script src="/bower_components/web3/dist/web3.js"></script>
-    <script src="/bower_components/web3/dist/web3.min.js"></script>
-    <!-- endbower -->
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/plugins.js -->
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/affix.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/alert.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/dropdown.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tooltip.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/modal.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/transition.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/button.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/popover.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/carousel.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/scrollspy.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/collapse.js"></script>
-    <script src="/bower_components/bootstrap-sass/assets/javascripts/bootstrap/tab.js"></script>
-    <!-- endbuild -->
-    
-    <!-- build:js scripts/main.js -->
-    <script src="scripts/main.js"></script>
-    <!-- endbuild -->
-  </body>
+    <br>
+    <div class="card">
+      <h5 class="card-header">Desbloquear conta</h5>
+
+      <div class="card-body">
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" id="accountUnlock" placeholder="Conta">
+          </div>
+          <div class="col-3">
+            <input type="text" class="form-control" id="password" placeholder="Password">
+          </div>
+          <button type="button" class="btn btn-primary" id="btnUnlock">Desbloquear</button>
+        </div>
+      </div>
+    </div>
+
+    <br>
+    <div class="card">
+      <h5 class="card-header">Enviar ether</h5>
+
+      <div class="card-body">
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" id="from" placeholder="De">
+          </div>
+          <div class="col-3">
+            <input type="text" class="form-control" id="to" placeholder="Para">
+          </div>
+          <div class="col-3">
+            <input type="text" class="form-control" id="valueToSend" placeholder="Valor">
+          </div>
+          <button type="button" class="btn btn-primary" id="btnSendEther">Enviar</button>
+        </div>
+        <span>Transação</span>
+        <div class="form-row">
+          <div class="col-10 mb-2">
+            <div class="alert alert-success" role="alert"></div>
+            <label role="alert" id="labelResultSendEther"></label>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br>
+    <div class="card">
+      <h5 class="card-header">Visualizar transação</h5>
+
+      <div class="card-body">
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" id="transaction" placeholder="Transação">
+          </div>
+          <button type="button" class="btn btn-primary" id="btnTransaction">Consultar</button>
+        </div>
+        <br>
+        <div class="form-row">
+          <div class="alert alert-warning" role="alert">
+            <textarea class="form-control" rows="20" cols="90" id="resultTransaction"></textarea>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <br>
+
+  <div class="footer">
+    <p>♥ GoBlockchain</p>
+  </div>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+    crossorigin="anonymous"></script>
+  <!-- web3 -->
+  <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+  <!--bootstrap-->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    crossorigin="anonymous"></script>
+  <!--js-->
+  <script src="scripts/main.js"></script>
+</body>
+
 </html>
