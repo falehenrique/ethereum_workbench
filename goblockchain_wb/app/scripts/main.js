@@ -6,10 +6,10 @@
 
 //load
 window.addEventListener('load', function() {
-    // var urlNode = 'http://localhost:8545';
-    // window.web3 = new Web3(new Web3.providers.HttpProvider(urlNode));
+    var urlNode = 'http://localhost:8545';
+    window.web3 = new Web3(new Web3.providers.HttpProvider(urlNode));
     // conect with metamask
-    window.web3 = new Web3(web3.currentProvider)
+    // window.web3 = new Web3(web3.currentProvider)
     checkWeb3()
     
 });

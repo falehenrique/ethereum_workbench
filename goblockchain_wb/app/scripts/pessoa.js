@@ -14,9 +14,16 @@ $( "#btnConsultarPessoa" ).click(function() {
 
     let personInstance = getInstancePerson();
 
-    let name = personInstance.name(function(error, result){
+    personInstance.name(function(error, result){
         $("#nome").val(result);
     })
+
+    let owner = personInstance.owner();
+    $("#responsavel").val(owner);
+
+    personInstance.email(function(error, result){
+        $("#email").val(result);
+    })        
 
 });
 
