@@ -1,0 +1,218 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="./img/favicon.ico" />
+    <title>goblockchain_wb</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+        crossorigin="anonymous">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="header">
+            <ul class="nav">
+                <li class="nav-item">
+                    <a class="nav-link active" href="index.html">Minha Carteira</a>
+                </li>
+                <li class="nav-item">
+                    <li>
+                        <a class="nav-link" href="">Cadastro Pessoa</a>
+                    </li>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Tokens
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="#">Comprar</a>
+                        <a class="dropdown-item" href="#">Fundo do token</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
+                        Evento
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="Event.html">Meu Evento</a>
+                        <a class="dropdown-item" href="Ticket.html">Ticket</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <br>
+        <h3>
+            <p>Meu Evento</p>
+        </h3>
+        <br>
+
+        <div class="card">
+            <h5 class="card-header">Criar</h5>
+
+            <div class="card-body">
+
+                <div class="form-group">
+                    <label for="nomeEvento">Nome</label>
+                    <input type="text" class="form-control" id="nomeEvento" aria-describedby="nomeEventoHelp" placeholder="Nome Evento">
+                    <small id="nomeEventoHelp" class="form-text text-muted">Informe o nome do seu evento.</small>
+                </div>
+                <div class="form-group">
+                    <label for="valorEvento">Valor</label>
+                    <input type="text" class="form-control" id="valorEvento" aria-describedby="valorEventoHelp" placeholder="Valor Evento">
+                    <small id="valorEventoHelp" class="form-text text-muted">Informe o valor do evento.</small>
+                </div>
+                <div class="form-group">
+                    <label for="dataEvento">Data</label>
+                    <input type="text" class="form-control" id="dataEvento" aria-describedby="dataEventoHelp" placeholder="Data Evento">
+                    <small id="dataEventoHelp" class="form-text text-muted">Informe a data do evento.</small>
+                </div>
+                <button type="button" class="btn btn-primary" id="criarEvento">Criar</button>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <h5 class="card-header">Consultar evento</h5>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="enderecoContratoEvento" placeholder="Endereço Contrato">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btnConsultarEvento">Consultar</button>
+                </div>
+                <div class="form-group row">
+                    <label for="nome" class="col-sm-2 col-form-label">Responsável</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="responsavel" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nome" class="col-sm-2 col-form-label">Nome</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="nome" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="valor" class="col-sm-2 col-form-label">Valor</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="valor" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="data" class="col-sm-2 col-form-label">Data</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="data" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="status" class="col-sm-2 col-form-label">Status</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="status" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="responsavel" class="col-sm-2 col-form-label">Saldo</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="saldo" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <h5 class="card-header">Fechar para compras</h5>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-danger" id="btnEncerrarCompras">Encerrar Compras</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <h5 class="card-header">Estorno</h5>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="col-4">
+                        <input type="text" class="form-control" id="contaComprador" placeholder="Endereço do Comprador">
+                    </div>
+                    <button type="button" class="btn btn-primary" id="btnEstonarValor">Estornar valor</button>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="card">
+            <h5 class="card-header">Eventos</h5>
+
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="compras" class="col-sm-2 col-form-label">Compras</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="eventoCompras" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="compras" class="col-sm-2 col-form-label">Fechamento do evento</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="eventoFechado" value="">
+                    </div>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="transferencia" class="col-sm-2 col-form-label">Transferências</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="transferencia" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="card">
+            <h5 class="card-header">Encerrar contrato</h5>
+            <div class="card-body">
+                <div class="form-row">
+                    <div class="col-4">
+                        <button type="button" class="btn btn-danger" id="btnEncerrar">Encerrar</button>
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="col-12">
+                        <input type="text" readonly class="form-control-plaintext" id="eventoEmail" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="footer">
+            <p>♥ GoBlockchain</p>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+    <!-- web3 -->
+    <script src="https://cdn.jsdelivr.net/gh/ethereum/web3.js/dist/web3.min.js"></script>
+    <!--bootstrap-->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+    <!--js-->
+    <script src="scripts/main.js"></script>
+    <script src="scripts/Event.js"></script>
+</body>
+
+</html>
+
+<!--Contratos creados testnet
+0x3F4C5AD4f6208b18b4E434251c2c57277e7487d3
+-->

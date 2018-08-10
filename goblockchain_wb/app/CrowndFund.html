@@ -26,29 +26,30 @@
                     </li>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         Tokens
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="#">Comprar</a>
-                        <a class="dropdown-item" href="CrowndFund.html">Fundo do token</a>
+                        <a class="dropdown-item" href="#">Fundo do token</a>
                     </div>
                 </li>
                 <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle disabled" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
                         aria-expanded="false">
                         Evento
                     </a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Meu ticket</a>
+                        <a class="dropdown-item" href="Event.html">Meu Evento</a>
+                        <a class="dropdown-item" href="#">Ticket</a>
                     </div>
                 </li>
             </ul>
         </div>
         <br>
         <h3>
-            <p>Consulta de Pessoa</p>
+            <p>Fundo de reserva Token</p>
         </h3>
         <br>
 
@@ -58,45 +59,46 @@
             <div class="card-body">
                 <div class="form-row">
                     <div class="col-4">
-                        <input type="text" class="form-control" id="enderecoContratoPessoa" placeholder="Endereço Contrato">
+                        <input type="text" class="form-control" id="enderecoContratoFundo" placeholder="Endereço Contrato">
                     </div>
-                    <button type="button" class="btn btn-primary" id="btnConsultarPessoa">Consultar</button>
+                    <button type="button" class="btn btn-primary" id="btnConsultarFundo">Consultar</button>
                 </div>
 
                 <div class="form-group row">
-                    <label for="responsavel" class="col-sm-2 col-form-label">Reponsável</label>
+                    <label for="responsavel" class="col-sm-2 col-form-label">Saldo</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="saldo" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="nome" class="col-sm-2 col-form-label">Responsável</label>
                     <div class="col-sm-10">
                         <input type="text" readonly class="form-control-plaintext" id="responsavel" value="">
                     </div>
                 </div>
-                <div class="form-group row">
-                    <label for="nome" class="col-sm-2 col-form-label">Nome</label>
-                    <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="nome" value="">
-                    </div>
-                </div>
-                <div class="form-group row">
-                    <label for="email" class="col-sm-2 col-form-label">Email</label>
-                    <div class="col-sm-10">
-                        <input type="text" readonly class="form-control-plaintext" id="email" value="">
-                    </div>
-                </div>
-
             </div>
         </div>
         <br>
         <div class="card">
-            <h5 class="card-header">Alterar Pesssoa</h5>
+            <h5 class="card-header">Eventos</h5>
+
+            <div class="card-body">
+                <div class="form-group row">
+                    <label for="compras" class="col-sm-2 col-form-label">Compras</label>
+                    <div class="col-sm-10">
+                        <input type="text" readonly class="form-control-plaintext" id="compras" value="">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="card">
+            <h5 class="card-header">Encerrar contrato</h5>
             <div class="card-body">
                 <div class="form-row">
                     <div class="col-4">
-                        <input type="text" class="form-control" id="enderecoConta" placeholder="Endereço Contrato">
-                    </div>
-                    <div class="col-4">
-                        <input type="text" class="form-control" id="emailNovo" placeholder="Email Novo">
-                    </div>
-                    <div class="col-4">
-                        <button type="button" class="btn btn-danger" id="btnAlterarEmail">Alterar</button>
+                        <button type="button" class="btn btn-danger" id="btnEncerrar">Encerrar</button>
                     </div>
                 </div>
                 <div class="form-row">
@@ -105,12 +107,10 @@
                     </div>
                 </div>
             </div>
-
-            <br>
-
-            <div class="footer">
-                <p>♥ GoBlockchain</p>
-            </div>
+        </div>
+        <br>
+        <div class="footer">
+            <p>♥ GoBlockchain</p>
         </div>
     </div>
     <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -123,7 +123,7 @@
         crossorigin="anonymous"></script>
     <!--js-->
     <script src="scripts/main.js"></script>
-    <script src="scripts/pessoa.js"></script>
+    <script src="scripts/CrowndFund.js"></script>
 </body>
 
 </html>
