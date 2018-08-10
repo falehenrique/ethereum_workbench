@@ -26,5 +26,6 @@ contract PersonTeste {
     
     function changeEmail(string _email) public onlyOwner {
         email = _email;
+        emit LogUpdateEmail(msg.sender, _email);
     }
 }
