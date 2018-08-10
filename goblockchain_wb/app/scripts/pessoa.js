@@ -3,7 +3,7 @@ let abi_person = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":
 
 function getInstancePerson() {
     let PersonContract = web3.eth.contract(abi_person);
-    let personInstance = PersonContract.at("0x434ef03a465a61743ca13a52fdc8d275ded22227");
+    let personInstance = PersonContract.at($("#enderecoContratoPessoa").val());
     return personInstance;
 }
 
@@ -18,8 +18,9 @@ $( "#btnConsultarPessoa" ).click(function() {
         $("#nome").val(result);
     })
 
-    let owner = personInstance.owner();
-    $("#responsavel").val(owner);
+    personInstance.owner(function(error, result){
+        $("#responsavel").val(result);
+    })
 
     personInstance.email(function(error, result){
         $("#email").val(result);
@@ -33,14 +34,14 @@ $( "#btnConsultarPessoa" ).click(function() {
 $( "#btnAlterarEmail" ).click(function() {
     let personInstance = getInstancePerson();
     let emailNovo = $('#emailNovo').val();
-    let enderecoConta = $('#enderecoConta').val();
+    // let enderecoConta = $('#enderecoConta').val();
 
-    var tx = {
-        from: enderecoConta,
-        gas: 470000
-    }
+    // var tx = {
+    //     from: enderecoConta,
+    //     gas: 470000
+    // }
 
-    personInstance.changeEmail.sendTransaction(emailNovo, tx, function(error, result){
+    personInstance.changeEmail.sendTransaction(emailNovo, function(error, result){
         console.info(result);
     });
 
