@@ -144,6 +144,45 @@
     </div>
     <br>
     <div class="card">
+      <h5 class="card-header">Meu token</h5>
+
+      <div class="card-body">
+        <div class="form-row">
+          <div class="col-3">
+            <input type="text" readonly class="form-control" id="quantidade" value="0">
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" id="quantidadeComprar" placeholder="Quantidade">
+          </div>
+          <button type="button" class="btn btn-primary" id="btnBalance">Comprar</button>
+        </div>
+        <br>
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" id="quantidadeTransferir" placeholder="Quantidade">
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" id="transferirPara" placeholder="Endereço da Conta">
+          </div>
+          <button type="button" class="btn btn-danger" id="btnTransferir" onclick="transferirTokens();">Transferir</button>
+        </div>
+
+        <br>
+        <div class="form-row">
+          <div class="col-4">
+            <input type="text" class="form-control" id="quantidadePessoa" placeholder="Quantidade">
+          </div>
+          <div class="col-4">
+            <input type="text" class="form-control" id="enderecoPessoa" placeholder="Endereço da Conta">
+          </div>
+          <button type="button" class="btn btn-primary" id="btnTransferir" onclick="consultarTokens();">Consultar</button>
+        </div>        
+
+
+      </div>
+    </div>
+    <br>
+    <div class="card">
       <h5 class="card-header">Visualizar transação</h5>
 
       <div class="card-body">

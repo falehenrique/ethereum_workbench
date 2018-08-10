@@ -6,12 +6,14 @@
 
 //load
 window.addEventListener('load', function() {
-    // var urlNode = 'http://localhost:8545';
+    //var urlNode = 'http://127.0.0.1:7545';
+    var urlNode = 'http://localhost:8545';
     // window.web3 = new Web3(new Web3.providers.HttpProvider(urlNode));
     // conect with metamask
     window.web3 = new Web3(web3.currentProvider)
     checkWeb3()
-    
+
+    carregarToken();
 });
 
 //Check the web3 connection
@@ -160,3 +162,51 @@ $( "#btnTransaction" ).click(function() {
         }
     });
 });
+
+
+var abiToken = [{"constant":true,"inputs":[],"name":"name","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_spender","type":"address"},{"name":"_value","type":"uint256"}],"name":"approve","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"totalSupply","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_from","type":"address"},{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transferFrom","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[],"name":"INITIAL_SUPPLY","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"decimals","outputs":[{"name":"","type":"uint8"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"}],"name":"balanceOf","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":true,"inputs":[],"name":"symbol","outputs":[{"name":"","type":"string"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"_to","type":"address"},{"name":"_value","type":"uint256"}],"name":"transfer","outputs":[{"name":"","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"constant":true,"inputs":[{"name":"_owner","type":"address"},{"name":"_spender","type":"address"}],"name":"allowance","outputs":[{"name":"","type":"uint256"}],"payable":false,"stateMutability":"view","type":"function"},{"inputs":[],"payable":false,"stateMutability":"nonpayable","type":"constructor"},{"anonymous":false,"inputs":[{"indexed":true,"name":"from","type":"address"},{"indexed":true,"name":"to","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Transfer","type":"event"},{"anonymous":false,"inputs":[{"indexed":true,"name":"owner","type":"address"},{"indexed":true,"name":"spender","type":"address"},{"indexed":false,"name":"value","type":"uint256"}],"name":"Approval","type":"event"}];
+var enderecoToken = "0x6BaBB67D564C2d321E1fA9acBD5a12d118099569";
+function getInstanceToken() {
+    let PersonContract = web3.eth.contract(abiToken);
+    let personInstance = PersonContract.at(enderecoToken);
+    return personInstance;
+}
+
+function carregarToken() {
+    let instance  = getInstanceToken();
+
+    web3.eth.getAccounts(function (error, contaMetamask) {
+
+        instance.balanceOf(contaMetamask, function(error, result) {
+
+            instance.symbol(function(error, retornoSymbol) {
+                $("#quantidade").val(retornoSymbol + " " + result)
+            });
+        });
+    });
+}
+
+function transferirTokens() {
+    let endereco = $("#transferirPara").val();
+    let quantidade = $("#quantidadeTransferir").val();   
+    
+    let instance  = getInstanceToken();
+
+    instance.transfer.sendTransaction(endereco, quantidade, function(error, result){
+        if (error) {
+            alert("Ocorreu um erro " + error);
+        } else {
+            console.info(result);
+        }
+    });
+}
+
+function consultarTokens() {
+    let endereco = $("#enderecoPessoa").val();
+    
+    let instance  = getInstanceToken();
+
+    instance.balanceOf(endereco, function(error, result) {
+        $("#quantidadePessoa").val(result)
+    });
+}
