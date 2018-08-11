@@ -70,7 +70,15 @@ $( "#btnConsultarEvento" ).click(function() {
  * Comprar Evento
  */
 $( "#btnComprarEvento" ).click(function() {
+    let instance = getInstance();
 
+    let tx = {
+        value: $("#valor").val()
+    }
+
+    instance.pay.sendTransaction(tx, function(error, result){
+        console.info(result);
+    });    
 })
 
 /**
@@ -87,7 +95,11 @@ $( "#btnEncerrarCompras" ).click(function() {
  * Estonar valor
  */
 $( "#btnEstonarValor" ).click(function() {
-
+    let instance = getInstance();
+    let contaComprador = $("#contaComprador").val();
+    instance.withdraw.sendTransaction(contaComprador, function(error, result){
+        console.info(result);
+    });
 })
 
 //event.stopWatching();
