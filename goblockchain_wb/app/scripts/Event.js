@@ -98,16 +98,16 @@ function iniciarEventos(instance) {
         $("#eventoCompras").val("Evento pago por: " + result.args.paying + " valor = " + result.args.weiAmount);
     });
 
-    let eventoWithdrawn = instance.Withdrawn();
-    eventoWithdrawn.watch(function(error, result){
-        console.info(result);
-        $("#transferencia").val("Valor estornado para : " + result.args.paying + " valor = " + result.args.weiAmount);
-    });    
-
     let eventoClosed = instance.Closed();
     eventoClosed.watch(function(error, result){
         console.info(result);
         $("#eventoFechado").val("Evento encerrado");
     });      
+
+    let eventoWithdrawn = instance.Withdrawn();
+    eventoWithdrawn.watch(function(error, result){
+        console.info(result);
+        $("#transferencia").val("Valor estornado para : " + result.args.paying + " valor = " + result.args.weiAmount);
+    });    
     
 }

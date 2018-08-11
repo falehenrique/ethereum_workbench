@@ -35,3 +35,4 @@ contract TokenClass is StandardToken {
         address(crownFund).transfer(msg.value);
         emit Transfer(owner, msg.sender, _qtd);
     }
+}
